@@ -1,5 +1,5 @@
 library("igraph")
-investor_path="/Users/akma327/Desktop/Fall 2016/CS224W/Project/Final/VCNetworks/data/investorsFolded.txt"
+investor_path="../data/investorsFolded.txt"
 graph <- read_graph(investor_path, format="edgelist")
 pc_1 <- power_centrality(graph, nodes = V(graph), loops = FALSE, exponent=1)
 pc_75 <- power_centrality(graph, nodes = V(graph), loops = FALSE, exponent=0.75)
@@ -29,7 +29,7 @@ for (a in pc_neg75){
 
 nid_to_centrality <- cbind(nid, centrality)
 df <- data.frame(nid_to_centrality)
-write.table(nid_to_centrality, file = "/Users/akma327/Desktop/Fall 2016/CS224W/Project/Final/VCNetworks/data/bonacich/neg_75.txt")
+write.table(nid_to_centrality, file = "../data/bonacich/neg_75.txt")
 
 
 
